@@ -1,8 +1,8 @@
-package DemoSapXepNoiBot;
+package DemoSapXep;
 
 import java.util.Scanner;
 
-public class BubbleSortByStep {
+public class SapXepNoiBot {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter list size");
