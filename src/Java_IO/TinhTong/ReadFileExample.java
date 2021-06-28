@@ -1,4 +1,4 @@
-package Java_IO;
+package Java_IO.TinhTong;
 
 import java.io.*;
 
