@@ -101,20 +101,52 @@ public class ManageNV {
 
 
     private static double getTienLuong() {
-        return 0;
+        while (true) {
+            try {
+                System.out.println("Nhập lương : ");
+                return Double.parseDouble(sc.nextLine());
+            }catch (Exception e) {
+                System.out.println("Sai định dạng");
+            }
+        }
     }
 
     private static String getGmail() {
-        return null;
+        while (true) {
+            try {
+                System.out.println("Nhập gmail :");
+                String gmail = sc.nextLine();
+                for ( NhanVien nv : list) {
+                    if ( nv.getGmail().equals(gmail));
+                    throw new Gmail();
+                }
+                return gmail;
+            }catch (Gmail e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     private static String getSoDT() {
-        return null;
+        System.out.println("Nhập số điện thoại");
+        return sc.nextLine();
     }
 
     private static String getGioiTinh() {
-        return null;
+        while (true) {
+            try {
+                System.out.println("Nhập giới tính (Nam/Nu)");
+                String gioTinh = sc.nextLine();
+                if (gioTinh.equals("Nam") || gioTinh.equals("Nu")) {
+                    return gioTinh;
+
+                } else throw new GioiTinh();
+            } catch (GioiTinh e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
+
 
     private static String getTen() {
         System.out.println("Nhập tên");
@@ -122,7 +154,18 @@ public class ManageNV {
     }
 
     private static int getTuoi() {
-        return 0;
+        while (true) {
+            try {
+                System.out.println("Nhập tuổi :");
+                int tuoi = Integer.parseInt(sc.nextLine());
+                if (tuoi < 18) throw new DoTuoi();
+                else return tuoi;
+            } catch (DoTuoi e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Sai định dạng");
+            }
+        }
     }
 
 
